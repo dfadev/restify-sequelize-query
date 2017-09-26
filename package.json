@@ -1,7 +1,7 @@
 {
   "name": "restify-sequelize-query",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create Restify middleware that queries Sequelize models.",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
@@ -32,5 +32,6 @@
         }
       ]
     ]
-  }
+  },
+  "repository": "dfadev/restify-sequelize-query"
 }
