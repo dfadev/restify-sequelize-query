@@ -1,0 +1,32 @@
+{
+  "name": "restify-sequelize-query",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "author": "Russ Panula <russ@dfa.net>",
+  "license": "MIT",
+  "dependencies": {
+    "circular-json": "^0.3.3",
+    "restify": "^5.2.0",
+    "restify-errors": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
