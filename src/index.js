@@ -3,6 +3,7 @@ import CircularJSON from 'circular-json';
 import crypto from 'crypto';
 
 export function query(options) {
+	options = options || { method: "unknown" };
 	if (options.method == "select") return select(options);
 	if (options.method == "upsert") return upsert(options);
 	if (options.method == "update") return update(options);
@@ -471,4 +472,3 @@ function multiexec(options) {
 		});
 	}
 }
-
