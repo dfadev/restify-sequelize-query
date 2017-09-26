@@ -11,7 +11,7 @@ server.get(
     query({
         method: 'select',
         model: StuffModel,
-        attributes: [ 'id, 'col1', 'col2' ],
+        attributes: [ 'id', 'col1', 'col2' ],
         order: [ 'id' ],
         where: (params) => ({ id: params.id }),
         limit: 1,
