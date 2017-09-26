@@ -28,12 +28,12 @@ A Restify middleware function.
 #### options
 Specifies Sequelize query options.  Options are passed directly to the Sequelize method selected by `options.method`.
 ##### options.method:
-`select`: Execute one `findAll` query
-`update`: Execute `update` calls based on `req.body` contents
-`upsert`: Execute `upsert` calls based on `req.body` contents
-`delete`: Execute `delete` calls based on `req.body` contents
-`exec`: Execute one raw SQL query
-`multiexec`: Execute raw SQL queries based on `req.body` contents
+- `select`: Execute one `findAll` query
+- `update`: Execute `update` calls based on `req.body` contents
+- `upsert`: Execute `upsert` calls based on `req.body` contents
+- `delete`: Execute `delete` calls based on `req.body` contents
+- `exec`: Execute one raw SQL query
+- `multiexec`: Execute raw SQL queries based on `req.body` contents
 
 ##### options.model:
 Specifies the Sequelize model to query.
@@ -70,6 +70,7 @@ For `exec` queries:
 This can be set to a function accepting `req` as it's parameter and returning a value or `Promise` that describes the parameter replacements to be made in the raw SQL.
 
 For `multiexec` queries:
+
 This can be set to a function accepting `req.body[idx]` as it's parameter and returning a value or `Promise` that describes the parameter replacements to be made in the raw SQL.
 
 ##### options.bind:
@@ -78,6 +79,7 @@ For `exec` queries:
 This can be set to a function accepting `req` as it's parameter and returning a value or `Promise` that describes the parameter binds to be made in the raw SQL.
 
 For `multiexec` queries:
+
 This can be set to a function accepting `req.body[idx]` as it's parameter and returning a value or `Promise` that describes the parameter binds to be made in the raw SQL.
 
 ##### options.cache:
