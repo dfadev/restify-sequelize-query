@@ -10,7 +10,8 @@ import cache from 'restify-sequelize-query/lib/RedisCache';
 cache.configure({
 	'StuffModel': 'redis://localhost:7777',
 	'OtherStuff': 'redis://localhosT:7778',
-	'MoreStuff': 'redis://localhost:7779'
+	'MoreStuff': 'redis://localhost:7779',
+	'raw': 'redis://localhost:77780' // exec/multiexec
 });
 
 server.get(
