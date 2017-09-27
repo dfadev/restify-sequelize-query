@@ -4,7 +4,7 @@ Create REST APIs using Restify and Sequelize.
 
 Example:
 ```js
-var query = require('restify-sequelize-query').query;
+var query = require('restify-sequelize-query').default;
 
 server.get(
     { path: '/stuff/:id' },
@@ -89,6 +89,8 @@ This can be set to a cache class that should have the following methods:
 - *set(shard, key, value)*: Return a `Promise` that sets a cache value and resolves to that same value.
 - *get(shard, key)*: Return a `Promise` that resolves either to the cache value specified by the key or `undefined`.
 - *clear(shard)*: Return a `Promise` that removes all keys associated with the shard.
+
+Two sample cache classes are included: `MemoryCache` and `RedisCache`.
 
 ### options.invalidate:
 
