@@ -4,9 +4,7 @@ chai.use(chaiAsPromised);
 var expect = chai.expect;
 
 var SequelizeMock = require('sequelize-mock');
-var query = require('../lib').query;
-
-
+var query = require('../lib').default;
 var dbMock = new SequelizeMock();
 
 var UserMock = dbMock.define('user', {
