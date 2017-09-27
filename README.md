@@ -15,17 +15,17 @@ cache.configure({
 });
 
 server.get(
-    { path: '/stuff/:id' },
-    query({
-        method: 'select',
-        model: StuffModel,
-        attributes: [ 'id', 'col1', 'col2' ],
-        order: [ 'id' ],
-        where: (params) => ({ id: params.id }),
-        limit: 1,
-        format: (results) => results.map(result => ({ column1: result.col1, column2: result.col2 })),
-				cache: cache
-    })
+	{ path: '/stuff/:id' },
+	query({
+		method: 'select',
+		model: StuffModel,
+		attributes: [ 'id', 'col1', 'col2' ],
+		order: [ 'id' ],
+		where: (params) => ({ id: params.id }),
+		limit: 1,
+		format: (results) => results.map(result => ({ column1: result.col1, column2: result.col2 })),
+		cache: cache
+	})
 );
 ```
 
