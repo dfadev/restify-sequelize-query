@@ -4,7 +4,14 @@ Create REST APIs using Restify and Sequelize.
 
 Example:
 ```js
-var query = require('restify-sequelize-query').default;
+import query from 'restify-sequelize-query';
+import cache from 'restify-sequelize-query/lib/RedisCache';
+
+cache.configure({
+	'StuffModel': 'redis://localhost:7777',
+	'OtherStuff': 'redis://localhosT:7778',
+	'MoreStuff': 'redis://localhost:7779'
+});
 
 server.get(
     { path: '/stuff/:id' },
@@ -15,7 +22,8 @@ server.get(
         order: [ 'id' ],
         where: (params) => ({ id: params.id }),
         limit: 1,
-        format: (results) => results.map(result => ({ column1: result.col1, column2: result.col2 }))
+        format: (results) => results.map(result => ({ column1: result.col1, column2: result.col2 })),
+				cache: cache
     })
 );
 ```
